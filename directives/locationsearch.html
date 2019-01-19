@@ -39,7 +39,8 @@
 				
 				 <input type="text" ng-model="vm.postal" placeholder="postal code" ng-minlength="5">
 
-                <input type="submit" id="submit" class="submit" value="Go"  ng-click="vm.findLocations()" />
+                <input ng-if="vm.groups==false" type="submit" id="submit" class="submit" value="Go"  ng-click="vm.findLocations()" />
+                <input ng-if="vm.groups==true" type="submit" id="submit" class="submit" value="Go"  ng-click="vm.findLocationsGrouped()" />
                 <span class="filter-by" ng-if="vm.currcategory.indexOf(',')==-1 && vm.currcategory && vm.locationsfound==true">Filtering By: <input type="submit" class="submit" value="{{vm.currcategory}} X" ng-click="vm.clearFilters()"></span>
             </form>
 

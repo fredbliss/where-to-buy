@@ -127,7 +127,11 @@
 
         vm.findLocations = function() {
 
-            vm.category = angular.isDefined(vm.currcategory) && vm.currcategory!=null ? vm.currcategory : vm.originalcategory;
+            if(vm.groupcategory) {
+                vm.category = vm.groupcategory.value;
+            }else{
+                vm.category = angular.isDefined(vm.currcategory) && vm.currcategory!=null ? vm.currcategory : vm.originalcategory;
+            }
 
             if(vm.category == '') {  //reset value to the correct pre-set category
                 vm.category = vm.originalcategory
@@ -136,7 +140,7 @@
             }else{
 
             }
-
+            console.log(vm.category)
             toastr.info('Searching locations...','',{allowHtml:true,showMethod:'slideDown'});
             if(vm.postal) {    //update latlng
 

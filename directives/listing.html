@@ -1,0 +1,39 @@
+<div class="size1of4 zip_container">
+    <form novalidate name="searchForm">
+            <input type="text" ng-model="vm.postal" placeholder="postal code" ng-minlength="5">
+        <div class="select_container">
+            <select ng-model="vm.category" ng-options="category for category in vm.categories">
+                <option value="">All Categories</option>
+            </select>
+        </div>
+        <input type="submit" id="submit" class="submit" value="Go"  ng-click="vm.findLocations()" />
+    </form>
+</div>
+<div class="listing">
+    <div class="list_item" ng-repeat="location in vm.locations">
+        <div class="size1of4 distance">{{location.dist | number:2}}mi</div>
+        <div class="size2of4 location">
+            <h3>{{location.data.client}}</h3>
+            {{location.data.street}}<br>{{location.data.city}}, {{location.data.subdivision}} {{location.data.postal}}<br>
+            <a ng-show="location.data.url" href="{{location.data.url}}" target="_blank">Website</a>
+        </div>
+        <div class="size1of4 buttons">
+            <a ng-show="{{location.data.location.length>0}}" href="https://www.google.com/maps/place/{{location.data.street}}+{{location.data.city}},+{{location.data.subdivision}}+{{location.data.postal}}" class="directions_button" target="_blank">Directions</a>
+            <a ng-show="{{location.data.location.length>0}}" ng-click="vm.toggleMap(location.data,$index)" class="map_button">View Map</a>
+        </div>
+    </div>
+    <div ng-show="vm.locations.length==0">
+        <h3>Please provide a postal code or full address to find locations closest to you.</h3>
+    </div>
+</div>
+<div class="ng-modal" ng-if="vm.mapShown" ng-animate="'animate'">
+    <div class="ng-modal-overlay" ng-click="vm.hideMap()"></div>
+    <div class="ng-modal-dialog" style="width: 50%; height: 400px;" ng-animate="'animate'">
+        <div class="ng-modal-close" ng-click="vm.hideMap()">X</div>
+        <div class="ng-modal-dialog-content" style="padding-top:30px;">
+            <ui-gmap-google-map center="vm.map.center" refresh="vm.refreshMap" zoom="8" options="vm.map.options">
+                <ui-gmap-marker idKey="vm.currmarker.id" coords="vm.currmarker"></ui-gmap-marker>
+            </ui-gmap-google-map>
+        </div>
+    </div>
+</div>

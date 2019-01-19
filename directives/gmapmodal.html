@@ -1,0 +1,11 @@
+<div class="ng-modal" ng-show="vm.modalShown">
+    <div class="ng-modal-overlay" ng-click="vm.hideModal()"></div>
+    <div class="ng-modal-dialog" ng-style="vm.dialogStyle">
+        <div class="ng-modal-close" ng-click="vm.hideModal()">X</div>
+        <div class="ng-modal-dialog-content">
+            <ui-gmap-google-map center="coords" zoom="8" options="map.options">
+                <ui-gmap-marker idKey="{{id}}" coords="{latitude: location[0], longitude: location[1]}"></ui-gmap-marker>
+            </ui-gmap-google-map>
+        </div>
+    </div>
+</div>

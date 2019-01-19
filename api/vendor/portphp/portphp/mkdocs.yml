@@ -1,0 +1,24 @@
+site_name: PortPHP Documentation
+theme: readthedocs
+pages:
+- Introduction:
+  - index.md
+  - quickstart.md
+  - examples.md
+- Components:
+  - readers.md
+  - writers.md
+  - filters.md
+  - converters.md
+  - workflow.md
+- About:
+  - upgrading.md
+  - contributing.md
+site_url: http://portphp.org
+repo_url: https://github.com/portphp/portphp
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - markdown_include.include:
+      base_path: docs

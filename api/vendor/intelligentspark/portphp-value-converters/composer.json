@@ -1,0 +1,21 @@
+{
+    "name": "intelligentspark/portphp-value-converters",
+    "description": "Some additional value converters for PortPHP",
+    "type": "portphp-plugin",
+    "homepage": "https://github.com/intelligentspark",
+    "require": {
+        "portphp/portphp": "^1.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "IntelligentSpark\\": "src/"
+        }
+    },
+    "license": "ISC",
+    "authors": [
+        {
+            "name": "intelligentspark",
+            "email": "fred.bliss@intelligentspark.com"
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "fbliss/json-writer",
+  "type": "library",
+  "description": "A JSON filter writer extension for ddeboer/data-import.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Fred Bliss",
+      "email": "fred.bliss@intelligentspark.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0"
+  },
+  "require-dev": {
+    "ddeboer/data-import": "@stable"
+  },
+  "autoload": {
+    "psr-0": { "Geocoder": "src/" }
+  }
+}

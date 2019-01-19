@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html ng-app="chartis">
+
+<head lang="en">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Where to buy Pacon products</title>
+
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+
+</head>
+
+<body>
+
+<div class="row hide-on-print">
+
+    <div class="large-12 columns text-center">
+<img src="/wp-content/themes/pacon/images/logo.png" width="32" height="32" class="logo" alt="Pacon">
+        <h2>Find Pacon products by searching wherever is most convenient for you!</h2>
+        <p>Our locator will attempt to detect your location automatically, but you can also enter a ZIP or Postal Code, and search for a specific category to narrow down your results. If you’re visiting a store, please be sure to call ahead of time to ensure the product you’re looking for is available.</p>
+
+  </div>
+
+</div>
+
+<div ng-view></div>
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+<script src="bower_components/angular-toastr/dist/angular-toastr.min.js"></script>
+<script src="bower_components/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+<script src="bower_components/elasticsearch/elasticsearch.angular.min.js"></script>
+<script src="bower_components/lodash/lodash.min.js"></script>
+<script src="bower_components/restangular/dist/restangular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/vendor/foundation/vendor/jquery.js"></script>
+</body>
+
+</html>

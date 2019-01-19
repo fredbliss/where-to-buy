@@ -1,0 +1,29 @@
+<div class="row text-center">
+    <div class="button" ngf-select ngf-change="vm.upload($files)" ng-model="vm.files">Choose A File</div>
+</div>
+<div class="row">
+    <div class="success" ng-show="vm.finished==true">Finished!</div>
+</div>
+<div class="row text-center">
+    <ul class="no-bullet">
+        <li ng-repeat="f in vm.files" ng-show="vm.files.length > 0">
+            <!--<span class="progress" ng-show="f.progress >= 0">-->
+                <!--<div style="background-color:#009900; width:{{f.progress}}%">{{f.progress}}%</div>-->
+            <h2>{{f.progress}}%</h2>
+            <div
+                    round-progress
+                    max="100"
+                    current="f.progress"
+                    color="{{ (current / max < 0.5) ? '#ff8080' : '#45ccce' }}"
+                    bgcolor="#eaeaea"
+                    radius="100"
+                    stroke="20"
+                    semi="false"
+                    rounded="true"
+                    clockwise="true"
+                    iterations="50"
+                    animation="easeInOutQuart"></div>
+            <!--</span>-->
+        </li>
+    </ul>
+</div>

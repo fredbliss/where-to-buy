@@ -1,0 +1,9 @@
+<ul>
+    <li ng-repeat="pane in vm.panes">
+        <a href="#/{{pane.path}}">{{pane.name}}</a>
+    </li>
+</ul>
+
+<div id="pane-container">
+    <div ng-view></div>
+</div>

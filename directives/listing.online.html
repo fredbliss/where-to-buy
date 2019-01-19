@@ -1,0 +1,8 @@
+<div class="listing">
+    <div class="list_item" ng-repeat="location in vm.onlineretailers">
+        <div class="location">
+            <h3>{{location.data.client}}</h3>
+            <a ng-show="{{location.data.url}}" href="{{location.data.url}}" class="directions_button" target="_blank">Visit Website</a>
+        </div>
+    </div>
+</div>

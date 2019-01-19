@@ -1,0 +1,107 @@
+<html class="ng-scope" ng-app="chartis"><head lang="en"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Where to buy Pacon products</title>
+
+    <link rel="stylesheet" href="css/app.css">
+
+
+
+</head>
+
+<body>
+
+<div class="row hide-on-print">
+
+    <div class="large-12 columns text-center">
+
+        <h2>Where to buy</h2>
+
+        <p>Find local and online retailers selling Pacon products.</p>
+
+    </div>
+
+</div>
+
+<filters><div class="row">
+    <div class="small-12 medium-6 medium-offset-3 columns">
+        <select class="ng-pristine ng-untouched ng-valid" ng-model="vm.locationtypeselect" ng-change="vm.findProducts(vm.locationtypeselect)" ng-options="locationtype.label for locationtype in vm.locationtypes track by locationtype.id"><option selected="selected" class="" value="">(choose a retail location type)</option></select>
+    </div>
+</div>
+    <div class="row">
+        <div class="small-12 medium-6 medium-offset-3 columns">
+            <select class="ng-pristine ng-untouched ng-valid ng-hide" ng-show="vm.products.length" ng-model="vm.productselect" ng-change="vm.getRetailers(vm.productselect)" ng-options="product.label for product in vm.products track by product.id"><option selected="selected" class="" value="">(select a product)</option></select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 medium-6 medium-offset-3 columns">
+            <select class="ng-pristine ng-untouched ng-valid" ng-model="vm.searchtypeselect" ng-change="vm.getRetailers(vm.productselect)" ng-options="searchtype.label for searchtype in vm.searchtypes track by searchtype.id"><option selected="selected" class="" value="">(select a product)</option></select>
+        </div>
+    </div></filters>
+
+<listing><!-- ngRepeat: location in vm.locations track by $index --><div class="list_item ng-scope" ng-repeat="location in vm.locations track by $index">
+
+    <div class="size1of4 distance ng-binding">1.2mi</div>
+
+    <div class="size2of4 location ng-binding">
+        <h3><a href="#view map">Retail Store</a></h3>
+        111 Elm Street<br>
+        Westfield, MA 01085
+        <a href="#storelink" target="_blank">store website</a>
+        Dick Blick
+
+    </div>
+
+    <div class="size1of4 buttons">
+
+        <a href="#directions" class="directions_button">Directions</a><br>
+        <a href="#view map" class="map_button">View Map</a>
+
+    </div>
+
+</div><!-- end ngRepeat: location in vm.locations track by $index --><div class="list_item ng-scope" ng-repeat="location in vm.locations track by $index">
+
+    <div class="size1of4 distance ng-binding">11.5mi</div>
+
+    <div class="size2of4 location ng-binding">
+        <h3><a href="#view map">Retail Store</a></h3>
+        111 Elm Street<br>
+        Westfield, MA 01085
+        <a href="#storelink" target="_blank">store website</a>
+        Dick Blick
+
+    </div>
+
+    <div class="size1of4 buttons">
+
+        <a href="#directions" class="directions_button">Directions</a><br>
+        <a href="#view map" class="map_button">View Map</a>
+
+    </div>
+
+</div><!-- end ngRepeat: location in vm.locations track by $index --></listing>
+
+<script src="bower_components/angular/angular.min.js"></script>
+
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+<script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+
+<script src="bower_components/elasticsearch/elasticsearch.angular.min.js"></script>
+
+<script src="bower_components/lodash/lodash.min.js"></script>
+
+<script src="bower_components/restangular/dist/restangular.min.js"></script>
+
+<script src="js/app.js"></script>
+
+<script src="js/vendor/foundation/vendor/jquery.js"></script>
+
+
+
+</body></html>

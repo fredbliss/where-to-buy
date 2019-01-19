@@ -1,0 +1,21 @@
+<div class="list_item" ng-repeat="location in vm.catalogdistrolocations">
+
+    <div class="size2of4 location">
+
+        <h3>{{location.client}}</h3>
+
+    </div>
+
+    <div class="size1of4 buttons">
+
+        <a ng-show="{{location.url.length>0}}" href="{{location.url}}" class="website_button" target="_blank">Visit Website</a>
+
+    </div>
+
+</div>
+
+<div ng-show="vm.catalogdistrolocations.length==0">fg
+
+    <h3>No results found.</h3>
+
+</div>

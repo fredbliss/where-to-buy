@@ -1,0 +1,8 @@
+<div class="size1of4">
+    <input type="text" ng-model="vm.postal" placeholder="enter postal code">
+</div>
+<div class="size1of4">
+    <select ng-show="vm.products.length" ng-model="vm.productselect" ng-change="vm.getRetailers(vm.productselect)" ng-options="product.label for product in vm.products track by product.id">
+        <option value="">(select a product)</option>
+    </select>
+</div>

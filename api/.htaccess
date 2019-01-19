@@ -1,0 +1,12 @@
+<IfModule mime_module>
+  AddType application/x-httpd-ea-php71 .php .php7 .phtml
+</IfModule>
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_URI}::$1 ^(.*?/)(.*)::\2$
+RewriteRule ^(.*)$ - [E=REWRITE_BASE:%1]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ %{ENV:REWRITE_BASE}index.php [QSA,L]

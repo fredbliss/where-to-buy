@@ -1,0 +1,2 @@
+## Enable CORS
+Header set Access-Control-Allow-Origin "*"

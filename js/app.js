@@ -180,7 +180,7 @@
         vm.findLocationsGrouped = function() {
 
             vm.category = angular.isDefined(vm.groupcategory) && vm.groupcategory!=null ? vm.groupcategory.value : vm.originalcategory;
-
+            vm.currcategory = vm.category
             /*if(vm.category == '') {  //reset value to the correct pre-set category
                 vm.category = vm.originalcategory
                 vm.categoryarray = angular.isDefined(vm.category) ? vm.currcategory.split(",") : vm.categories;
@@ -936,11 +936,13 @@
             });
         };*/
     }
+
     function ESClientService(esFactory) {
         return esFactory({
             host: 'https://0664c0c35f4255df000.qb0x.com:443/'
         });
     }
+
     function SearchService($q, $http, toastr, ESClientService) {
         var SearchService = {};
         var offset = 0;
@@ -951,6 +953,8 @@
             var dsl = '';
 
             var categories = angular.isDefined(category) && category!=null ? category.split(",") : '';
+            console.log('hello')
+            console.log(categories);
 
             if(category) {
                 var query = {
